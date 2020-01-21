@@ -5,7 +5,8 @@
   "author": "stefan judis <stefanjudis@gmail.com>",
   "private": true,
   "dependencies": {
-    "contentful": "^4.3.0",
+    "@contentful/rich-text-html-renderer": "^13.4.0",
+    "contentful": "^4.6.5",
     "contentful-management": "^3.4.0",
     "nuxt": "^1.0.0-rc4",
     "vue-markdown": "^2.1.3"

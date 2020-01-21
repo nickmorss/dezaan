@@ -4,7 +4,10 @@ const ctfConfig = getConfigForKeys([
   'CTF_SPACE_ID',
   'CTF_CDA_ACCESS_TOKEN',
   'CTF_CMA_ACCESS_TOKEN',
-  'CTF_PERSON_ID'
+  'CTF_PERSON_ID',
+  "small_bag_cocoa_powders",
+  "large_format_cocoa_powders"
+
 ])
 const {createClient} = require('./plugins/contentful')
 const cdaClient = createClient(ctfConfig)
@@ -18,11 +21,11 @@ const config = {
   ** Headers of the page
   */
   head: {
-    title: 'Custom app with Contentful',
+    title: 'deZaan',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Custom app in under 5 minutes' }
+      { hid: 'description', name: 'description', content: 'deZaan' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
@@ -91,9 +94,9 @@ const config = {
       .then(([entries, postType]) => {
         return [
           // map entries to URLs
-          ...entries.items.map(entry => `/blog/${entry.fields.slug}`),
+          ...entries.items.map(entry => `/blog/${entry.fields.slug}`)
           // map all possible tags to URLs
-          ...postType.fields.find(field => field.id === 'tags').items.validations[0].in.map(tag => `/tags/${tag}`)
+          // ...postType.fields.find(field => field.id === 'tags').items.validations[0].in.map(tag => `/tags/${tag}`)
         ]
       })
     }
@@ -107,8 +110,11 @@ const config = {
     CTF_SPACE_ID: ctfConfig.CTF_SPACE_ID,
     CTF_CDA_ACCESS_TOKEN: ctfConfig.CTF_CDA_ACCESS_TOKEN,
     CTF_PERSON_ID: ctfConfig.CTF_PERSON_ID,
-    CTF_BLOG_POST_TYPE_ID: ctfConfig.CTF_BLOG_POST_TYPE_ID
+    CTF_BLOG_POST_TYPE_ID: ctfConfig.CTF_BLOG_POST_TYPE_ID,
+    ['small-bag-cocoa-powders']: ctfConfig.small_bag_cocoa_powders,
+    ['large-format-cocoa-powders']: ctfConfig.large_format_cocoa_powders
   }
 }
 
 module.exports = config
+

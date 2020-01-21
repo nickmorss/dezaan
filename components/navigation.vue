@@ -1,28 +1,28 @@
 <template>
   <nav role="navigation" class="top-nav">
-    <ul class="menu">
+    
+  <ul class="menu">
+    <li><a href="/products" class="">Products</a></li>
+    <li><a href="/recipes" class="">Recipes</a></li>
+  </ul>
+
+    <!--ul class="menu">
       <li v-if="!/\/.*?\/.*/.test(route.path)" v-for="route in this.$router.options.routes">
         <nuxt-link :to="{ name: route.name }">{{ route.name.charAt(0).toUpperCase() + route.name.slice(1) }}</nuxt-link>
       </li>
-    </ul>
+    </ul-->
   </nav>
 </template>
 
 <style>
 
-  .person-name:link,
-  .person-name:visited {
-    width: 50%;
-    display: inline-block;
-    font-size: 2em;
-    text-decoration: none;
-    color: #373F49;
-  }
-
   .top-nav {
-    width: 50%;
+    width: 100%;
     display: inline-block;
     text-align: right;
+    padding: 0 20px 20px 0;
+    /* top: -65px;*/
+    position: relative;
   }
 
   .menu {
@@ -36,7 +36,7 @@
 
   .menu a:link,
   .menu a:visited {
-    color: #373F49;
+    color: #ffffff;
     text-decoration: none;
   }
 

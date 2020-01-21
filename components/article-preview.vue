@@ -6,7 +6,7 @@
       sizes="(min-width: 1024px) 400px, 100vw"
     >
     <time class="tiny date">{{ ( new Date(post.fields.publishDate)).toDateString() }}</time>
-    <h4><nuxt-link :to="{ name: 'blog-slug', params: { slug: post.fields.slug }}" class="title">{{ post.fields.title }}</nuxt-link></h4>
+    <h4><nuxt-link :to="{ name: 'recipes-slug', params: { slug: post.fields.slug }}" class="title">{{ post.fields.title }}</nuxt-link></h4>
     <p>{{ post.fields.description }}</p>
 
     <div class="tags">
